@@ -1,0 +1,765 @@
+openapi: 3.0.0
+info:
+  title: СагаАртПлейс
+  version: 3.1.4
+  description: API для Маркетплейса СагаАрт
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/TVBOSS_1/Sagaart/3.1.4
+paths:
+  /user:
+    get:
+      summary: Получить список пользователей
+      tags: 
+        - User
+      operationId: getAllUsers
+      parameters:
+        - $ref: '#/components/parameters/page_param'
+        - $ref: '#/components/parameters/per_page_param'
+      responses:
+        '200': 
+          description: успешный ответ со списком пользователей
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Users"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Создать нового пользователя
+      tags:
+        - User
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        '200':  
+          description: успешный ответ с новым личным кабинетом пользователя
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/User"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"          
+  /user/{user_id}:
+    get: 
+      summary: Получить личный кабинет пользователя 
+      tags: 
+        - User
+      operationId: getUserById
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: идентификатор пользователя
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с личным кабинетом пользователя
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/User"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"        
+    put: 
+      summary: Изменить личный кабинет пользователя 
+      tags: 
+        - User
+      operationId: putUserById
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: идентификатор пользователя
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с измененным личным кабинетом пользователя
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/User"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"                
+  /Author:
+    get:
+      summary: Получить список авторов
+      tags: 
+        - Author
+      operationId: getAllAuthors
+      parameters:
+        - $ref: '#/components/parameters/page_param'
+        - $ref: '#/components/parameters/per_page_param'
+      responses:
+        '200': 
+          description: успешный ответ со списком авторов
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Authors"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Создать нового автора
+      tags:
+        - Author
+      operationId: createAuthor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Author"
+      responses:
+        '200': 
+          description: успешный ответ с новой карточкой автора
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Author"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"                
+  /Author/{Author_id}:
+    get: 
+      summary: Получить карточку автора 
+      tags: 
+        - Author
+      operationId: getAuthorById
+      parameters:
+        - name: Author_id
+          in: path
+          required: true
+          description: идентификатор пользователя
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с карточкой автора
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Author"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"                
+    put: 
+      summary: Изменить карточку автора 
+      tags: 
+        - Author
+      operationId: putAuthorById
+      parameters:
+        - name: Author_id
+          in: path
+          required: true
+          description: идентификатор автора
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с измененной карточкой автора
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Author"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"        
+  /Product:
+    get:
+      summary: Получить список товаров
+      tags: 
+        - Product
+      operationId: getAllProducts
+      parameters:
+        - $ref: '#/components/parameters/page_param'
+        - $ref: '#/components/parameters/per_page_param'
+      responses:
+        '200': 
+          description: успешный ответ со списком товаров
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Products"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Создать новую карточку товара
+      tags:
+        - Product
+      operationId: createProduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        '200': 
+          description: успешный ответ с новой карточкой товара
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Product"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /Product/{Product_id}:
+    get: 
+      summary: Получить карточку товара 
+      tags: 
+        - Product
+      operationId: getProductById
+      parameters:
+        - name: Product_id
+          in: path
+          required: true
+          description: идентификатор пользователя
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с карточкой товара
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Product"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"        
+    put: 
+      summary: Изменить карточку товара 
+      tags: 
+        - Product
+      operationId: putProductById
+      parameters:
+        - name: Product_id
+          in: path
+          required: true
+          description: идентификатор товара
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с измененной карточкой товара
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Product"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"        
+  /Subscribe:
+    get:
+      summary: Получить список подписок
+      tags: 
+        - Subscribe
+      operationId: getAllSubscribes
+      responses:
+        '200': 
+          description: успешный ответ со списком подписок
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Subscribes"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Создать новую подписку
+      tags:
+        - Subscribe
+      operationId: createSubscribe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Subscribe"
+      responses:
+        '200': 
+          description: успешный ответ с новой подпиской
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Subscribe"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /Subscribe/{Subscribe_id}:
+    get: 
+      summary: Получить информацию о подписке 
+      tags: 
+        - Subscribe
+      operationId: getSubscribeById
+      parameters:
+        - name: Subscribe_id
+          in: path
+          required: true
+          description: идентификатор подписки
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с информацией о подписке
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Subscribe"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put: 
+      summary: Изменить подписку 
+      tags: 
+        - Subscribe
+      operationId: putSubscribeById
+      parameters:
+        - name: Subscribe_id
+          in: path
+          required: true
+          description: идентификатор подписки
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с измененной подпиской
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Subscribe" 
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"        
+
+  /Analytic_prod/{Analytic_prod_id}:
+    get: 
+      summary: Получить аналитику по товару 
+      tags: 
+        - Analytic_prod
+      operationId: getAnalyticProdById
+      parameters:
+        - name: Analytic_prod_id
+          in: path
+          required: true
+          description: идентификатор аналитики товара
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с информацией об аналитике товара
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Analytic_prod"
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put: 
+      summary: Изменить аналитику товара 
+      tags: 
+        - Analytic_prod
+      operationId: putAnallyticProdById
+      parameters:
+        - name: Analytic_prod_id
+          in: path
+          required: true
+          description: идентификатор подписки
+          schema: 
+            type: string
+      responses:
+        '200': 
+          description: успешный ответ с измененной Аналитикой по товару
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Analytic_prod"    
+        'default':
+          description: что то пошло не так
+          content: 
+            appication/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  parameters:
+    page_param:
+      name: page
+      in: query
+      description: Номер страницы
+      schema:
+        type: integer
+        default: 1
+    per_page_param:
+      name: per_page
+      in: query
+      description: Количество элементов на странице
+      schema:
+        type: integer
+        default: 12
+  schemas:
+    User:
+      type: object
+      properties:
+        User_id:
+          type: integer
+        login:
+          type: string 
+        password:
+          type: string      
+        first_name:
+          type: string
+          description: Имя
+        last_name:
+          type: string
+          description: Фамилия
+        middle_name:
+          type: string
+          description: Отчество
+          example: Васильевич
+        phone:
+          type: string   
+          example: +7 903 123-00-00
+        email:
+          type: string
+        icon:
+          type: string
+          format: url
+          description: иконка пользователя
+        userType: 
+          type: string
+          enum:
+           - user
+           - author
+           - buyer
+          description: тип пользователя 
+    Users:      
+      type: array
+      items: 
+        $ref: "#/components/schemas/Users"
+    Author:
+      type: object
+      properties:
+        author_id:
+          type: integer
+        login:
+          type: string
+          description: первичный ключ пользователя
+        nick_name:
+          type: string
+          description: псевдоним
+        videocard:
+          type: string
+          format: url       
+          description: ссылка на видеовизитку
+        gender:
+          type: string
+          enum: 
+           - male
+           - female
+          description: пол автора
+        year_of_birth:
+          type: integer
+          description: год гождения автора
+          example: 1975
+        place_of_birth:
+          type: string
+          description: место рождения автора
+          example: Ленинград, СССР
+        biography:
+          type: string
+          description: очень краткая биография автора
+        solo_shows:
+          type: string
+          description: указания на личные выставки
+        solo_shows_gallery:
+          type: string
+          description: указания на личные галлереи
+        group_shows:
+          type: string
+          description: указания на совместные выставки
+        group_shows_gallery:
+          type: string
+          description: указания на участие в совместные галереях
+          example: Множество индивидуальных и групповых выставок
+        group_shows_artists:
+          type: string
+          description: указания на принадлежность к творческой группе
+        collected_private_collectors:
+          type: string
+          description: указания на хранение в частных коллекциях  
+          example: Работы этого художника находятся в частных и музейных коллекциях
+        collected_major_institutions:
+          type: string
+          description: указания на хранение в ведущих музеях            
+        winner_top_awards:
+          type: string
+          description: указания на ведущие отраслевые награды
+          example: Художник имеет награды в области искуства
+        social_networks:
+          type: array
+          items: 
+           $ref: "#/components/schemas/Social_networks"
+        education: 
+          type: array
+          items:
+           $ref: "#/components/schemas/Education"
+        address:
+          type: string
+          description: адрес автора
+          example: Россия, 143000, Московсская обл., г. Красногорск, ул Ленина, д. 1
+        style_works:
+          type: array
+          items:
+            $ref: "#/components/schemas/Style_works"
+    Social_networks:
+      type: object
+      properties: 
+        author_id:
+          type: integer
+          description: указание на автора 
+        name_nets: 
+          type: string
+          description: название социальной сети
+          example: VK
+        account:
+          type: string
+          format: url
+          example: https://vk.com/mossobyanin
+    Education:
+      type: object
+      properties:
+        ed_type: 
+          type: string
+          description: Тип образования
+        ed_level:
+          type: string
+          enum: 
+            - Среднее
+            - Высшее
+            - Профессионалное
+            - Специальное
+          description: Уровень учебного заведения
+        ed_name_institute:
+          type: string
+          description: Наименование учебного заведения
+          example: Художественная школа имени Сурикова
+    Style_works:
+      type: object
+      properties:
+        style_name:
+          type: string
+          description: Наименование стиля автора
+          example: Обьемная резьба по дереву.
+    Authors:      
+      type: array
+      items: 
+        $ref: "#/components/schemas/Authors"
+    Product:
+      type: object
+      properties:
+        product_id:
+          type: integer
+        aricle_num:
+          type: integer
+          description: Артикул товара (id)
+        author_id:
+          type: integer
+        category:
+          type: string  
+          example: Живопись
+        style_work:
+          type: string
+          description: Стиль
+          example: Импрессионизм
+        gеnre:
+          type: string
+          example: Современный пейзаж    
+        name:
+          type: string
+          example: Фабрика в Аренье
+          description: Наименование товара         
+        description_work:
+          type: string
+          description: Описание товара
+          example: Стремясь к спокойной обстановке, ван Гог начал...
+        price:
+          type: number   
+        preview_photo:
+          type: string
+          format: url
+          description: превью фотографии объекта  
+        photo_gallery:
+          type: array
+          items: 
+            type: object
+            properties:
+              photo:
+                type: string
+                format: url
+            description: фотографии объекта  
+        ishorizontal: 
+          type: boolean
+          example: 1-горизонтальный, 0-вертикальный
+        size:
+             type: string   
+             example: 64,5х54,0 см
+        material:
+          type: string    
+          example: Масло
+        material_subframe:
+          type: string
+          description: Материал планшета
+          example: ДВП
+        make_year: 
+          type: string
+          example: 1859
+        unique:
+          type: string
+          example: Уникальная работа
+        frame:
+          type: string
+          description: Рамка
+          example: Включено
+        authenticity_sertificate:
+          type: string
+          description: Сертификат подлинности
+          example: Включено (предоставлено галереей)
+    Products:      
+      type: array
+      items: 
+        $ref: "#/components/schemas/Products"        
+    Subscribe:
+      type: object
+      properties:
+        id:
+          type: integer
+        status:
+          type: string
+        start_date:
+          type: string
+          format: 2024-05-28T15:00:00+03
+          description: Дата начала подписки
+        end_date:          
+          type: string
+          format: 2025-05-28T15:00:00+03
+          description: Дата окончания подписки
+    Subscribes:      
+      type: array
+      items: 
+        $ref: "#/components/schemas/Subscribe"  
+    Analytic_prod:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Наименование аналитики
+        product_category:
+          type: string 
+          example: Живопись
+        picture: 
+          type: string
+          format: url
+          description: Картинака иллюстрация безудержного роста графика
+        annual_turnover:
+          type: string
+          description: Годовой оборот
+          example: "$ 50 982 426" 
+        w_rating:
+          type: string
+          description: Мировой рейтинг 
+          example: 29
+        price_index:
+          type: string
+          description: Индекс цен
+          example: +41.2%
+        Geographical_distribution:
+          type: string
+          description:  Географическое распределение
+          example: 83.8% продаж в великобритании
+        price_segment_distr:
+          type: string
+          description:  Распределение по ценовым сегментам
+          example: 28.9% лотов от 100$ до 500$
+        category_distr:
+          type: string
+          description:  Распределение по категориям
+          example: 91,1% лотов живописи
+        update_analitic:
+          type: string
+          description: Дата оценки
+          format: timestamp
+    Error: 
+      type: object
+      required: 
+        - code
+        - message
+      properties: 
+        code:
+          type: integer
+        message: 
+          type: string
