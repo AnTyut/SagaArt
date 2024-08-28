@@ -11,6 +11,7 @@
 
 # Документация
 Была разработана следующая документация:
-1. **Техническое задание**
+1. [link](file:///d:/absolute.md) **Техническое задание**
 2. **Use case.docx**
 3. **API**
+[link](file:///d:/absolute.md)    # absolute filesystem path
