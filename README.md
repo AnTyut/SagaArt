@@ -12,5 +12,5 @@
 # Документация
 Была разработана следующая документация:
 1. **Техническое задание**
-2. ##Use Case##
+2. **https://github.com/AnTyut/Sagaart/blob/a6116f4fc555024fc45a26d675a7cef65f54aecd/Use%20case.docx**
 3. ##API##
