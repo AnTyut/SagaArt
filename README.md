@@ -11,7 +11,6 @@
 
 # Документация
 Была разработана следующая документация:
-1. [link](file:///d:/absolute.md) **Техническое задание**
+1. [Техническое задание](https://github.com/AnTyut/Sagaart/blob/a4b39e70f92b8b2dd650f109a5b78af13052cec8/Use%20case.docx)
 2. **Use case.docx**
 3. **API**
-[link](file:///d:/absolute.md)    # absolute filesystem path
