@@ -7,7 +7,14 @@
         <mxCell id="nbplSKaoUEKsHxX8iZtq-1" value="Пользователь" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;rounded=1;fontSize=20;fontStyle=1;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;labelBackgroundColor=#FFFFFF;labelBorderColor=none;container=0;" parent="1" vertex="1">
           <mxGeometry x="250" y="1142.5" width="220" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="3RPS1Pi8BJswCtEHdRL8-2" value="*Логин&#xa;Пароль&#xa;Фамилия&#xa;Имя&#xa;Отчество&#xa;Электронная почта&#xa;Номер телефона&#xa;Изображение" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="nbplSKaoUEKsHxX8iZtq-1">
+        <mxCell id="3RPS1Pi8BJswCtEHdRL8-2" value="*Логин
+&#xa;Пароль
+&#xa;Фамилия
+&#xa;Имя
+&#xa;Отчество
+&#xa;Электронная почта
+&#xa;Номер телефона
+&#xa;Изображение" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="nbplSKaoUEKsHxX8iZtq-1">
           <mxGeometry y="28" width="220" height="122" as="geometry" />
         </mxCell>
         <mxCell id="nbplSKaoUEKsHxX8iZtq-7" value="" style="fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;rounded=0;exitX=0.998;exitY=0.401;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.003;entryY=0.421;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3RPS1Pi8BJswCtEHdRL8-2" target="nbplSKaoUEKsHxX8iZtq-10" edge="1">
