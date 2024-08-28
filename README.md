@@ -13,4 +13,4 @@
 Была разработана следующая документация:
 1. [Техническое задание](https://github.com/AnTyut/Sagaart/blob/e1993f23a442fc53667db1cfa16d820f5bcd8cc3/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20.docx)
 2. [Use case](https://github.com/AnTyut/Sagaart/blob/a4b39e70f92b8b2dd650f109a5b78af13052cec8/Use%20case.docx)
-3. [API]()
+3. [Диаграмма последовательности](https://github.com/AnTyut/Sagaart/blob/f501293d162fc3486ab257eb7c02afdb2b15eafd/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.drawio)
